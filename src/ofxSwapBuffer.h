@@ -25,7 +25,10 @@ public:
         swap();
         flag = 0;
     }
-    
+
+	virtual ofFbo& getDstFbo(){ return *dst; }
+	virtual ofFbo& getSrcFbo(){ return *src; }
+
     virtual void swap(){
         src = &(FBOs[(flag)%2]);
         dst = &(FBOs[++(flag)%2]);
