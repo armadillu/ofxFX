@@ -78,7 +78,7 @@ public:
     void            setInternalFormat(int _internalFormat) { internalFormat = _internalFormat; compileCode(); };
     virtual void    setTexture(ofBaseDraws& tex, int _texNum = 0);
     
-    virtual void    begin(int _texNum = 0);
+    virtual void    begin(int _texNum = 0, bool autoClear = false);
     virtual void    end(int _texNum = 0);
     
     bool            compiled() const{ return bFine; };

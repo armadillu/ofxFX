@@ -324,12 +324,12 @@ void ofxFXObject::setTexture(ofBaseDraws& tex, int _texNum){
 };
 
 // With begin(int) and end(int) the textures allocated can be filled with data
-void ofxFXObject::begin(int _texNum ) {
+void ofxFXObject::begin(int _texNum, bool autoClear ) {
     if ((_texNum < nTextures) && ( _texNum >= 0)){
         ofPushStyle();
         ofPushMatrix();
         textures[_texNum].begin();
-        ofClear(0,0);
+        if(autoClear) ofClear(0,0);
         
         bUpdate = true;
     }
